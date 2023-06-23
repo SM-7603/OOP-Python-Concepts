@@ -1,2 +1,2 @@
 # OOP-Python-Concepts
-Contains codings examples &amp; mini projects I build to solidify OOP concepts.
+Contains codings examples &amp; mini projects I built to solidify OOP concepts.
