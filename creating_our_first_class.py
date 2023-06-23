@@ -6,7 +6,7 @@
 class Item:
     pass # this is just to avoid errors for now
 
-# create the instance of the class
+# 2nd part: Create the instance of the class
 item1 = Item()
 # create attributes to one instance of the class
 item1.name = "Phone"
@@ -25,6 +25,6 @@ print(type(item1.quantity))  # int
 # random_str = str(4)
 # print(type(random_str))
 
-
-
-# 2nd part: Create the instance of the class
+# Checking how methods work by using the built-in class "str"
+random_str = "aaa" # creating an instance of the str class
+print(random_str.upper()) # executing the upper() method
