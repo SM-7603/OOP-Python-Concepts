@@ -1,6 +1,11 @@
 class Item:
-    def __init__(self):
-        print("I think, therefore I am :D")
+    # down here, we've made put in these extra parameters (apart from self - which is there, to let the method know, for which instance its being executed for) to make them a requirement for creating an instance...
+    def __init__(self, name, price, quantity):
+        # what we've done now is define the attributes for each instance dynamically using the "self" parameter (because we know how self works in python from the previous file/example)
+        # note for self - the stuff on the left {self.name,price,quantity} are the attributes and the stuff on the right are the parameters that the method receives from the instances...
+        self.name = name
+        self.price = price
+        self.quantity = quantity
 
     def calculate_total_price(self, x, y):
         return x * y
@@ -13,6 +18,7 @@ class Item:
 # Proposition:
 # What if we could declare in a class that for every instance that we create, name, price & quantity must be passed.
 
+# create constructor functions: (why?)
 # Solution => create a special method - (__init__) == constructor
 # these methods that start & end with these double underscores (__magicMethods__) are also known as magic methods
 
@@ -20,17 +26,17 @@ class Item:
 # This is something that will be always executed (per instance) if its defined a class and an instance in created.
 
 
-item1 = Item()
-# notice how - "I think, therefore I am :D" is printed 2 times, exactly when an instance is created, that's cause of the constructor...
-item1.name = "Phone"
-item1.price = 100
-item1.quantity = 5
+item1 = Item("Phone", 100, 5)
 
 
-item2 = Item()
-# notice how - "I think, therefore I am :D" is printed 2 times, exactly when an instance is created, that's cause of the constructor...
-item2.name = "Laptop"
-item2.price = 1000
-item2.quantity = 3
+item2 = Item("Laptop", 1000, 3)
 
-# create constructor functions: (why?)
+
+print(f"Item 1:")
+print(f"Attribute 1 value: {item1.name}")
+print(f"Attribute 2 value: {item1.price}")
+print(f"Attribute 3 value: {item1.quantity}")
+print(f"Item 2:")
+print(f"Attribute 1 value: {item2.name}")
+print(f"Attribute 2 value: {item2.price}")
+print(f"Attribute 3 value: {item2.quantity}")
