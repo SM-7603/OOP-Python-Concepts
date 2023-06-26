@@ -1,11 +1,14 @@
 class Item:
     # down here, we've made put in these extra parameters (apart from self - which is there, to let the method know, for which instance its being executed for) to make them a requirement for creating an instance...
-    def __init__(self, name, price, quantity):
+    # important side-notes: just because we're using the __init__ method doesn't mean that we can't differentiate b/w mandatory & non-mandatory parameters...
+    # eg. if we don't know know the quantity for an item, then we set a default value inside the method itself, thereby making the parameter optional...
+    def __init__(self, name, price, quantity=0):
         # what we've done now is define the attributes for each instance dynamically using the "self" parameter (because we know how self works in python from the previous file/example)
         # note for self - the stuff on the left {self.name,price,quantity} are the attributes and the stuff on the right are the parameters that the method receives from the instances...
         self.name = name
         self.price = price
         self.quantity = quantity
+        # it's best practice to assignment the attributes inside the constructor
 
     def calculate_total_price(self, x, y):
         return x * y
@@ -26,10 +29,10 @@ class Item:
 # This is something that will be always executed (per instance) if its defined a class and an instance in created.
 
 
-item1 = Item("Phone", 100, 5)
+item1 = Item("Phone", 100)
 
 
-item2 = Item("Laptop", 1000, 3)
+item2 = Item("Laptop", 1000)
 
 
 print(f"Item 1:")
